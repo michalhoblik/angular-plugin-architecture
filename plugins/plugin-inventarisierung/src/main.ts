@@ -1,0 +1,1 @@
+export { PluginInventarisierungModule } from './app/plugin-inventarisierung.module';

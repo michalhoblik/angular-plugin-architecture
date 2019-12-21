@@ -10,8 +10,6 @@ declare const SystemJS: any;
 export class AppComponent implements AfterViewInit {
   @ViewChild('content', { read: ViewContainerRef, static: false }) content: ViewContainerRef;
 
-  title = 'prm21-core';
-
   constructor(private compiler: Compiler, private injector: Injector) { }
     ngAfterViewInit() {
     this.loadPlugins();
@@ -19,11 +17,11 @@ export class AppComponent implements AfterViewInit {
 
   private async loadPlugins() {
     // import external module bundle
-    const module = await SystemJS.import('assets/plugins/plugin-owi21togo.bundle.js');
+    const module = await SystemJS.import('assets/plugins/plugin-inventarisierung.bundle.js');
 
     // compile module
     const moduleFactory = await this.compiler
-                                    .compileModuleAsync<any>(module.PluginOwi21ToGoModule);
+                                    .compileModuleAsync<any>(module.PluginInventarisierungModule);
 
     // resolve component factory
     const moduleRef = moduleFactory.create(this.injector);
