@@ -1,0 +1,1 @@
+export { PluginOwi21ToGoModule } from './app/plugin-owi21togo.module';
